@@ -103,7 +103,7 @@ function update_script() {
   fi
   msg_ok "Ensured ASP.NET Core Runtime"
 
-  fetch_and_deploy_from_url "https://filebin.net/k9kdh9yvcwmewse7/ff-latest.tar.xz" "/opt/fileflows"
+  fetch_and_deploy_from_url "https://github.com/konart/libheif/raw/refs/heads/main/ff-latest.tar.xz" "/opt/fileflows"
 
   msg_info "Starting Service"
   systemctl --all start 'fileflows*'
