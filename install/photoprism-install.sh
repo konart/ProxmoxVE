@@ -40,8 +40,9 @@ msg_info "Installing PhotoPrism (Patience)"
 mkdir -p /opt/photoprism/{cache,config,photos,storage,temp}
 mkdir -p /opt/photoprism/photos/{originals,import}
 mkdir -p /opt/photoprism_backups
-LIBHEIF_URL=$(curl -fsSL "https://dl.photoprism.app/dist/libheif/" | grep -oP "libheif-bookworm-$(arch_resolve)-v[0-9\.]+\.tar\.gz" | sort -V | tail -n 1)
-curl -fsSL "https://dl.photoprism.app/dist/libheif/$LIBHEIF_URL" -o /tmp/libheif.tar.gz
+# LIBHEIF_URL=$(curl -fsSL "https://dl.photoprism.app/dist/libheif/" | grep -oP "libheif-bookworm-$(arch_resolve)-v[0-9\.]+\.tar\.gz" | sort -V | tail -n 1)
+LIBHEIF_URL="libheif-bookworm-amd64-v1.23.1.tar.gz"
+curl -fsSL "https://github.com/konart/libheif/raw/refs/heads/main/$LIBHEIF_URL" -o /tmp/libheif.tar.gz
 tar -xzf /tmp/libheif.tar.gz -C /usr/local
 ldconfig
 echo "${LIBHEIF_URL}" >~/.photoprism_libheif
