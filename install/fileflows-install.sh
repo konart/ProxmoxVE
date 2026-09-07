@@ -39,7 +39,7 @@ else
 fi
 msg_ok "Installed ASP.NET Core Runtime"
 
-fetch_and_deploy_from_url "https://filebin.net/k9kdh9yvcwmewse7/ff-latest.tar.xz" "/opt/fileflows"
+fetch_and_deploy_from_url "https://github.com/konart/libheif/raw/refs/heads/main/ff-latest.tar.xz" "/opt/fileflows"
 
 $STD ln -svf /usr/bin/ffmpeg /usr/local/bin/ffmpeg
 $STD ln -svf /usr/bin/ffprobe /usr/local/bin/ffprobe
